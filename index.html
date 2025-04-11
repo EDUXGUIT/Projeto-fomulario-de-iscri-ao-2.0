@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="darkModeSwitchIndex" />
+      <label for="darkModeSwitchIndex">Modo Escuro</label>
+    </div>
+    <div class="container">
+      <div class="form-container">
+        <h2>Formulário de Inscrição</h2>
+        <p class="subtitle">
+          Preencha os dados abaixo para fazer sua inscrição no Programa
+        </p>
+
+        <form id="registrationForm">
+          <div class="form-section">
+            <h3>Informações do participante</h3>
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required />
+            <div class="error-message" id="nome-error"></div>
+
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento" required />
+            <div class="error-message" id="nascimento-error"></div>
+
+            <label for="cpf">CPF:</label>
+            <input
+              type="text"
+              id="cpf"
+              name="cpf"
+              placeholder="123.456.789-00"
+              required
+            />
+            <div class="error-message" id="cpf-error"></div>
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+              <option value="">Selecione</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <div class="error-message" id="sexo-error"></div>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+            <div class="error-message" id="email-error"></div>
+
+            <label for="telefone">Telefone:</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="(98) 9 8765-4321"
+              required
+            />
+            <div class="error-message" id="telefone-error"></div>
+
+            <label for="documento">Documento de identidade:</label>
+            <div class="file-upload">
+              <input
+                type="file"
+                id="documento"
+                name="documento"
+                accept="image/*,.pdf"
+              />
+            </div>
+            <div class="error-message" id="documento-error"></div>
+          </div>
+
+          <div class="form-section">
+            <h3>Endereço residencial</h3>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required />
+            <div class="error-message" id="cep-error"></div>
+
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" name="rua" required />
+            <div class="error-message" id="rua-error"></div>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required />
+            <div class="error-message" id="numero-error"></div>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required />
+            <div class="error-message" id="cidade-error"></div>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required />
+            <div class="error-message" id="estado-error"></div>
+
+            <label for="comprovante">Comprovante de residência:</label>
+            <div class="file-upload">
+              <input
+                type="file"
+                id="comprovante"
+                name="comprovante"
+                accept="image/*,.pdf"
+              />
+            </div>
+            <div class="error-message" id="comprovante-error"></div>
+          </div>
+
+          <div class="form-section">
+            <h3>Trilhas de aprendizagem</h3>
+            <div class="checkbox-group">
+              <label>
+                <input type="radio" name="trilha" value="Front-end" required />
+                <span class="trilha-box">
+                  <i class="fas fa-code"></i> Programação Front-end
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="trilha" value="Back-end" required />
+                <span class="trilha-box">
+                  <i class="fas fa-server"></i> Programação Back-end
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="trilha" value="Jogos" required />
+                <span class="trilha-box">
+                  <i class="fas fa-gamepad"></i> Programação de Jogos
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="trilha" value="UX" required />
+                <span class="trilha-box">
+                  <i class="fas fa-pencil-ruler"></i> Design e Experiência
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="trilha" value="Dados" required />
+                <span class="trilha-box">
+                  <i class="fas fa-database"></i> Ciência de Dados
+                </span>
+              </label>
+            </div>
+            <div class="error-message" id="trilha-error"></div>
+          </div>
+
+          <div class="form-section">
+            <h3>Informações de Acesso</h3>
+            <label for="userId">ID do Usuário:</label>
+            <input type="text" id="userId" name="userId" required />
+            <div class="error-message" id="userId-error"></div>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required />
+            <div class="error-message" id="password-error"></div>
+          </div>
+
+          <label>
+            <input type="checkbox" name="termos" id="termos" required /> Declaro
+            que li e concordo com os <a href="#">Termos e Condições</a></label
+          >
+          <div class="error-message" id="termos-error"></div>
+
+          <div class="button-group">
+            <button type="submit" class="submit-btn">Fazer inscrição</button>
+            <button type="button" class="save-btn">Salvar</button>
+            <button type="reset" class="reset-btn">Cancelar</button>
+          </div>
+        </form>
+      </div>
+      <div class="image-container">
+        <img
+          src="img/imagem.1d2.png"
+          alt="Imagem do Formulário"
+          class="imagem-principal"
+        />
+        <div class="logos-container">
+          <img src="img/logo-trilhas-inova.png" alt="Sua Logo" class="logo" />
+        </div>
+      </div>
+    </div>
+
+    <p class="login-link">
+      Já possui uma conta? <a href="login.html">Faça login</a>
+    </p>
+
+    <script>
+      const darkModeSwitchIndex = document.getElementById(
+        "darkModeSwitchIndex"
+      );
+      const bodyIndex = document.body;
+
+      function enableDarkModeIndex() {
+        bodyIndex.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "enabled");
+      }
+
+      function disableDarkModeIndex() {
+        bodyIndex.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "disabled");
+      }
+
+      const darkModeStored = localStorage.getItem("darkMode");
+
+      if (darkModeStored === "enabled") {
+        enableDarkModeIndex();
+        if (darkModeSwitchIndex) {
+          darkModeSwitchIndex.checked = true;
+        }
+      }
+
+      if (darkModeSwitchIndex) {
+        darkModeSwitchIndex.addEventListener("change", () => {
+          if (darkModeSwitchIndex.checked) {
+            enableDarkModeIndex();
+          } else {
+            disableDarkModeIndex();
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const registrationForm = document.getElementById("registrationForm");
+        const saveButton = document.querySelector(".save-btn");
+
+        function displayError(fieldId, message) {
+          const errorElement = document.getElementById(`${fieldId}-error`);
+          if (errorElement) {
+            errorElement.textContent = message;
+          }
+        }
+
+        function clearErrors() {
+          const errorMessages = document.querySelectorAll(".error-message");
+          errorMessages.forEach((error) => (error.textContent = ""));
+        }
+
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        registrationForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          clearErrors();
+          let isValid = true;
+          const formData = new FormData(this);
+          const data = {};
+
+          for (const [name, value] of formData.entries()) {
+            data[name] = value;
+            const errorId = `${name}-error`;
+
+            if (!value && name !== "documento" && name !== "comprovante") {
+              displayError(name, "Este campo é obrigatório.");
+              isValid = false;
+            }
+
+            if (name === "email" && value && !isValidEmail(value)) {
+              displayError(name, "Por favor, insira um e-mail válido.");
+              isValid = false;
+            }
+
+            if (name === "trilha" && !formData.get("trilha")) {
+              displayError("trilha", "Selecione uma trilha de aprendizagem.");
+              isValid = false;
+            }
+
+            if (
+              name === "termos" &&
+              !document.getElementById("termos").checked
+            ) {
+              displayError(
+                "termos",
+                "Você precisa concordar com os Termos e Condições."
+              );
+              isValid = false;
+            }
+          }
+
+          if (isValid) {
+            localStorage.setItem("registrationData", JSON.stringify(data));
+            alert("Inscrição realizada com sucesso!");
+            registrationForm.reset();
+            window.location.href = "login.html";
+          }
+        });
+
+        saveButton.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(registrationForm);
+          const data = {};
+
+          for (const [name, value] of formData.entries()) {
+            data[name] = value;
+          }
+
+          localStorage.setItem("formData", JSON.stringify(data));
+          alert("Informações salvas localmente!");
+        });
+
+        function loadSavedData() {
+          const savedData = localStorage.getItem("formData");
+          if (savedData) {
+            const data = JSON.parse(savedData);
+            for (const name in data) {
+              const inputElement = registrationForm.querySelector(
+                `[name="${name}"]`
+              );
+              if (inputElement) {
+                if (inputElement.type === "radio") {
+                  inputElement.checked = inputElement.value === data[name];
+                } else if (inputElement.type === "checkbox") {
+                  inputElement.checked = data[name] === "on"; // Assumindo que o checkbox salva 'on' se marcado
+                } else if (inputElement.type === "file") {
+                  // Não é possível pré-popular campos de arquivo por segurança
+                } else {
+                  inputElement.value = data[name];
+                }
+              }
+            }
+            alert("Dados salvos carregados!");
+          }
+        }
+
+        // Carregar dados salvos ao carregar a página (opcional)
+        // loadSavedData();
+      });
+    </script>
+  </body>
+</html>

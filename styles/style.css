@@ -1,0 +1,472 @@
+/* style.css (Responsividade Total Aprimorada) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.container {
+    display: flex;
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição para o modo escuro */
+}
+
+.form-container {
+    width: 60%;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.image-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #115cac;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.image-container img {
+    max-width: 100%; /* Imagem responsiva */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.logo {
+    max-height: 30px;
+    max-width: 100%; /* Logo responsiva (se necessário) */
+    height: auto;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    transition: border-color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.form-section h3 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #555;
+    transition: color 0.3s ease, border-color 0.3s ease; /* Transição para o modo escuro */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1em; /* Usando em para escalabilidade */
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"],
+select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em; /* Usando em para escalabilidade */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, color 0.3s ease; /* Transições */
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none; /* Remove a borda de foco padrão do navegador */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adiciona uma sombra suave ao redor */
+}
+
+.file-upload {
+    border: 2px dashed #ccc;
+    padding: 15px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #777;
+    font-size: 0.9em; /* Ajuste para telas menores */
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    flex-wrap: wrap; /* Permite que os botões quebrem em telas menores */
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; /* Usando em para escalabilidade */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, color 0.3s ease; /* Transições */
+    flex-grow: 1; /* Faz os botões crescerem para ocupar o espaço disponível */
+    min-width: 150px; /* Largura mínima para os botões */
+}
+
+button:hover {
+    /* Cores levemente mais escuras/claras no hover */
+    filter: brightness(1.1);
+    transform: scale(1.02); /* Leve aumento no tamanho */
+}
+
+button:active {
+    transform: scale(0.98); /* Leve "pressionar" ao clicar */
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.reset-btn {
+    background-color: #e9ecef;
+    color: #495057;
+    border: 1px solid #ccc;
+}
+
+.save-btn {
+    background-color: #ffc107;
+    color: #212529;
+    border: 1px solid #ffc107;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 0.9em; /* Ajuste para telas menores */
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.trilha-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: calc(50% - 5px); /* Dois botões por linha em telas médias */
+    min-width: 150px; /* Largura mínima */
+    height: auto; /* Altura automática para conteúdo variado */
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out, color 0.3s ease; /* Transições */
+    box-sizing: border-box;
+    margin-right: 0; /* Remove margem direita para o cálculo correto */
+    margin-bottom: 10px;
+}
+
+.trilha-box i {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.checkbox-group label .trilha-box:hover {
+    background-color: #f9f9f9; /* Leve cor de fundo no hover */
+    transform: scale(1.01);
+}
+
+.checkbox-group input[type="radio"]:checked + .trilha-box {
+    border-color: #007bff;
+    transform: scale(1.05); /* Leve destaque ao selecionar */
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out, color 0.3s ease; /* Transições */
+}
+
+.checkbox-group label:nth-child(1) .trilha-box {
+    background-color: #e0f2fe;
+    transition: background-color 0.3s ease; /* Transição para o modo escuro */
+    color: inherit; /* Garante que a cor do texto herde para a transição */
+}
+
+/* Estilos adicionais */
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Usando em para escalabilidade */
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1em; /* Usando em para escalabilidade */
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+.login-link a {
+    color: #007bff;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 992px) {
+    /* Telas menores que desktops */
+    .form-container {
+        width: 70%;
+        padding: 25px;
+    }
+
+    .image-container {
+        width: 30%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablets e telas menores */
+    .container {
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .trilha-box {
+        width: 100%; /* Um botão por linha em telas menores */
+        margin-right: 0;
+    }
+
+    .button-group {
+        flex-direction: column; /* Botões em coluna em telas menores */
+    }
+
+    button {
+        min-width: auto; /* Remove largura mínima para ocupar a largura total */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Celulares */
+    .form-container {
+        padding: 15px;
+    }
+
+    .image-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    label {
+        font-size: 0.9em;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .file-upload {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}
+
+/* -------------------------------------------------- */
+/* ESTILOS PARA O MODO ESCURO             */
+/* -------------------------------------------------- */
+.dark-mode-toggle {
+    position: fixed; /* Para ficar fixo na tela */
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Para ficar acima de outros elementos */
+    display: flex;
+    align-items: center;
+}
+
+#darkModeSwitchIndex,
+#darkModeSwitchLogin { /* Aplica estilos para ambos os switches */
+    width: 50px;
+    height: 25px;
+    appearance: none;
+    background-color: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+#darkModeSwitchIndex::before,
+#darkModeSwitchLogin::before { /* Aplica estilos para ambos os cursores */
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s ease;
+}
+
+#darkModeSwitchIndex:checked,
+#darkModeSwitchLogin:checked { /* Aplica estilos para ambos os switches ativos */
+    background-color: #333;
+}
+
+#darkModeSwitchIndex:checked::before,
+#darkModeSwitchLogin:checked::before { /* Aplica estilos para ambos os cursores ativos */
+    transform: translateX(25px);
+}
+
+.dark-mode-toggle label {
+    margin-left: 10px;
+    color: #333; /* Cor do texto no modo claro */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Transição para o modo escuro */
+}
+
+body.dark-mode .dark-mode-toggle label {
+    color: #f4f4f4; /* Cor do texto no modo escuro */
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .container {
+    background-color: #2c2c2c;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .form-container h2,
+body.dark-mode .form-container .subtitle,
+body.dark-mode .form-section h3,
+body.dark-mode label,
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="tel"],
+body.dark-mode input[type="date"],
+body.dark-mode input[type="password"],
+body.dark-mode select,
+body.dark-mode .file-upload,
+body.dark-mode .login-link,
+body.dark-mode .signup-link { /* Adicionado para login.css */
+    color: #f4f4f4;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="tel"],
+body.dark-mode input[type="date"],
+body.dark-mode input[type="password"],
+body.dark-mode select {
+    background-color: #333;
+    border-color: #555;
+    color: #f4f4f4;
+}
+
+body.dark-mode .file-upload {
+    border-color: #555;
+    color: #ccc;
+    background-color: #333;
+}
+
+body.dark-mode .form-section {
+    border-bottom-color: #555;
+}
+
+body.dark-mode .form-section h3 {
+    border-bottom-color: #777;
+}
+
+body.dark-mode .reset-btn {
+    background-color: #444;
+    color: #f4f4f4;
+    border-color: #555;
+}
+
+body.dark-mode .trilha-box {
+    border-color: #555;
+    color: #f4f4f4;
+    background-color: #333;
+}
+
+body.dark-mode .checkbox-group label:nth-child(1) .trilha-box {
+    background-color: #555;
+    color: #f4f4f4;
+}
+
+body.dark-mode .login-link a,
+body.dark-mode .signup

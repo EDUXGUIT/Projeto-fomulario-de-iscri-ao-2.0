@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="darkModeSwitchLogin" />
+      <label for="darkModeSwitchLogin">Modo Escuro</label>
+    </div>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="loginUserId">ID do Usuário:</label>
+        <input type="text" id="loginUserId" name="loginUserId" required />
+        <div class="error-message" id="loginUserId-error"></div>
+
+        <label for="loginPassword">Senha:</label>
+        <input
+          type="password"
+          id="loginPassword"
+          name="loginPassword"
+          required
+        />
+        <div class="error-message" id="loginPassword-error"></div>
+
+        <button type="submit" class="submit-btn">Entrar</button>
+      </form>
+      <p class="signup-link">
+        Ainda não tem uma conta? <a href="index.html">Cadastre-se</a>
+      </p>
+    </div>
+
+    <script>
+      const darkModeSwitchLogin = document.getElementById(
+        "darkModeSwitchLogin"
+      );
+      const bodyLogin = document.body;
+
+      function enableDarkModeLogin() {
+        bodyLogin.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "enabled");
+      }
+
+      function disableDarkModeLogin() {
+        bodyLogin.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "disabled");
+      }
+
+      const darkModeStoredLogin = localStorage.getItem("darkMode");
+
+      if (darkModeStoredLogin === "enabled") {
+        enableDarkModeLogin();
+        if (darkModeSwitchLogin) {
+          darkModeSwitchLogin.checked = true;
+        }
+      }
+
+      if (darkModeSwitchLogin) {
+        darkModeSwitchLogin.addEventListener("change", () => {
+          if (darkModeSwitchLogin.checked) {
+            enableDarkModeLogin();
+          } else {
+            disableDarkModeLogin();
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.getElementById("loginForm");
+
+        function displayError(fieldId, message) {
+          const errorElement = document.getElementById(`${fieldId}-error`);
+          if (errorElement) {
+            errorElement.textContent = message;
+          }
+        }
+
+        function clearErrors() {
+          const errorMessages = document.querySelectorAll(".error-message");
+          errorMessages.forEach((error) => (error.textContent = ""));
+        }
+
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          clearErrors();
+          const loginUserId = document.getElementById("loginUserId").value;
+          const loginPassword = document.getElementById("loginPassword").value;
+
+          const storedData = localStorage.getItem("registrationData");
+
+          if (storedData) {
+            const userData = JSON.parse(storedData);
+            if (
+              userData.userId === loginUserId &&
+              userData.password === loginPassword
+            ) {
+              alert("Login realizado com sucesso!");
+              window.location.href = "parabens.html";
+            } else {
+              displayError("loginUserId", "ID de usuário ou senha incorretos.");
+              displayError("loginPassword", "Senha incorreta.");
+            }
+          } else {
+            alert("Nenhum usuário cadastrado encontrado.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
